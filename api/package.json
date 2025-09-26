@@ -1,0 +1,22 @@
+{
+  "name": "webservice-gestao360-api",
+  "version": "1.0.0",
+  "description": "API REST do ERP Gestão 360",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": ["api", "erp", "gestao360", "supabase", "delphi"],
+  "author": "Equipe Gestão 360",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
+  }
+}

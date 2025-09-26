@@ -1,0 +1,1 @@
+// DTO/Interface de Autenticacao 

@@ -1,0 +1,19 @@
+{
+  "name": "webservice-gestao360-web",
+  "version": "1.0.0",
+  "description": "Frontend ERP Gestão 360 (Bootstrap)",
+  "scripts": {
+    "start": "npx serve views",
+    "dev": "npx live-server views"
+  },
+  "keywords": ["frontend", "bootstrap", "gestao360", "erp"],
+  "author": "Equipe Gestão 360",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "serve": "^14.2.1"
+  }
+}
