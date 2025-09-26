@@ -1,0 +1,28 @@
+{
+  "name": "erp-cloud-app",
+  "version": "1.0.0",
+  "description": "A cloud-based ERP application",
+  "main": "src/server/app.ts",
+  "scripts": {
+    "start": "ts-node src/server/app.ts",
+    "build": "tsc",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "ts-node": "^10.4.0",
+    "nodemon": "^2.0.15"
+  },
+  "keywords": [
+    "ERP",
+    "cloud",
+    "application"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
