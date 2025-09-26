@@ -8,15 +8,13 @@
     "build": "tsc",
     "start": "node dist/index.js"
   },
-  "keywords": ["api", "erp", "gestao360", "supabase", "delphi"],
-  "author": "Equipe Gestão 360",
-  "license": "MIT",
   "dependencies": {
     "express": "^4.19.2"
   },
   "devDependencies": {
-    "@types/express": "^4.17.21",
+    "typescript": "^5.3.3",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.3.3"
+    "@types/node": "^20.6.2",
+    "@types/express": "^4.17.21"
   }
 }
