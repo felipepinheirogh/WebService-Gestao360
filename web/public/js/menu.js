@@ -1,6 +1,6 @@
 // web/public/js/menu.js
 const MENU_ITEMS = [
-  { title: "Dashboard", icon: "bi-speedometer2", view: "/views/dashboard/dashboard.html", roles: ["admin","user"] },
+  { title: "Visão Geral", icon: "bi-speedometer2", view: "/views/dashboard/dashboard.html", roles: ["admin","user"] },
   { 
     title: "Clientes", icon: "bi-people", roles: ["admin"],
     children: [
@@ -15,9 +15,9 @@ const MENU_ITEMS = [
       { title: "Adicionar Usuário", view: "/views/usuario/usuario_add.html", roles: ["admin"] }
     ]
   },
-  { title: "Licenças", icon: "bi-card-checklist", view: "/views/licenca/licenca.html", roles: ["admin","user"] },
+  { title: "Licenças", icon: "bi-card-checklist", view: "/views/licenca/licenca.html", roles: ["admin"] },
   { 
-    title: "Configurações", icon: "bi-gear", roles: ["admin"],
+    title: "Configurações", icon: "bi-gear", roles: ["admin","user"],
     children: [
       { title: "Integrações", view: "/views/integracao/settings.html", roles: ["admin"] },
       { title: "Sistema", view: "/views/configuracoes/configuracoes.html", roles: ["admin"] }
