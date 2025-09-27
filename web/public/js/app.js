@@ -1,4 +1,5 @@
 // web/public/js/app.js
+
 function loadView(view) {
   fetch(view)
     .then(res => {
@@ -6,23 +7,28 @@ function loadView(view) {
       return res.text();
     })
     .then(html => {
-      document.getElementById('app').innerHTML = html;
+      const appDiv = document.getElementById('app');
+      appDiv.innerHTML = html;
+
       // Executa scripts embutidos na view carregada
-      const scripts = document.getElementById('app').querySelectorAll('script');
+      const scripts = appDiv.querySelectorAll('script');
       scripts.forEach(script => {
         eval(script.innerText);
       });
     })
     .catch(err => {
       console.error(err);
-      document.getElementById('app').innerHTML = `<div class="text-danger p-3">Erro ao carregar a página.</div>`;
+      document.getElementById('app').innerHTML = `
+        <div class="text-danger p-3">
+          Erro ao carregar a página: ${err.message}
+        </div>`;
     });
 }
 
 // Verifica se o usuário está logado
 const isLoggedIn = !!localStorage.getItem('token');
 
-// Ajuste de paths: /views/ corresponde à pasta views servida pelo Express
+// Carrega a view correta
 if (isLoggedIn) {
   loadView('/views/dashboard/dashboard.html');
 } else {
