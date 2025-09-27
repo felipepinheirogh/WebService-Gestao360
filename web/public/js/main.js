@@ -1,31 +1,34 @@
-// Lógica JavaScript principal do frontend 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("loginForm");
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+// Arquivo JS global
+console.log("JS carregado corretamente");
 
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
+// // Lógica JavaScript principal do frontend 
+// document.addEventListener("DOMContentLoaded", () => {
+//   const form = document.getElementById("loginForm");
+//   if (form) {
+//     form.addEventListener("submit", async (e) => {
+//       e.preventDefault();
 
-      try {
-        const res = await fetch("/api/auth/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ username, password }),
-        });
+//       const username = document.getElementById("username").value;
+//       const password = document.getElementById("password").value;
 
-        const data = await res.json();
+//       try {
+//         const res = await fetch("/api/auth/login", {
+//           method: "POST",
+//           headers: { "Content-Type": "application/json" },
+//           body: JSON.stringify({ username, password }),
+//         });
 
-        if (res.ok) {
-          localStorage.setItem("token", data.token);
-          window.location.href = "../dashboard/index.html";
-        } else {
-          alert(data.error || "Erro no login");
-        }
-      } catch (err) {
-        alert("Falha ao conectar com o servidor");
-      }
-    });
-  }
-});
+//         const data = await res.json();
+
+//         if (res.ok) {
+//           localStorage.setItem("token", data.token);
+//           window.location.href = "../dashboard/index.html";
+//         } else {
+//           alert(data.error || "Erro no login");
+//         }
+//       } catch (err) {
+//         alert("Falha ao conectar com o servidor");
+//       }
+//     });
+//   }
+// });

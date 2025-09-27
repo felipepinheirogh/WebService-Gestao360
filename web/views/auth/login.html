@@ -1,4 +1,39 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Gestão 360°</title>
+  <link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body>
+  <h1>Login</h1>
+  <form id="loginForm">
+    <input type="text" id="username" placeholder="Usuário" required>
+    <input type="password" id="password" placeholder="Senha" required>
+    <button type="submit">Entrar</button>
+  </form>
+
+  <script src="../public/js/main.js"></script>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // Simulação de login
+      if(username === "admin" && password === "123") {
+        localStorage.setItem("token", "fake-jwt-token");
+        window.location.href = "../dashboard/index.html";
+      } else {
+        alert("Usuário ou senha inválidos!");
+      }
+    });
+  </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -22,4 +57,4 @@
     </form>
   </div>
 </body>
-</html>
+</html> -->
