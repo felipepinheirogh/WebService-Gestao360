@@ -1,9 +1,26 @@
-// Registro central e aplicacao dos sub-modulos de rotas 
-import { Router } from "express";
+// Registro central das rotas da API
+import { Application } from "express";
 import authRoutes from "./routes/AuthRoutes";
+import userRoutes from "./routes/UserRoutes";
+import clienteRoutes from "./routes/ClienteRoutes";
+import dashboardRoutes from "./routes/DashboardRoutes";
 
-const router = Router();
+/**
+ * Registra todas as rotas da API no app
+ */
+export function registerRoutes(app: Application): void {
+  app.use("/auth", authRoutes);
+  app.use("/user", userRoutes);
+  app.use("/cliente", clienteRoutes);
+  app.use("/dashboard", dashboardRoutes);
+}
 
-router.use("/auth", authRoutes);
+// // Registro central e aplicacao dos sub-modulos de rotas 
+// import { Router } from "express";
+// import authRoutes from "./routes/AuthRoutes";
 
-export default router;
+// const router = Router();
+
+// router.use("/auth", authRoutes);
+
+// export default router;
