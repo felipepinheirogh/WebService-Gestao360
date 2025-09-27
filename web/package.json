@@ -1,18 +1,16 @@
 {
-  "name": "webservice-gestao360",
+  "name": "webservice-gestao360-web",
   "version": "1.0.0",
   "private": true,
-  "description": "Monorepo ERP Gestão 360 (API + Website)",
+  "description": "Frontend do ERP Gestão 360",
   "scripts": {
-    "install:all": "npm install --prefix api && npm install --prefix web",
-    "dev:api": "npm run dev --prefix api",
-    "dev:web": "npm run dev --prefix web",
-    "dev:all": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
-    "build:api": "npm run build --prefix api",
-    "start:api": "npm start --prefix api",
-    "start:web": "npm start --prefix web"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "devDependencies": {
-    "concurrently": "^8.2.2"
+  "dependencies": {
+    "next": "14.2.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   }
 }
