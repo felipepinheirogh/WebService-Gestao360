@@ -28,7 +28,7 @@ export class AppSingleton {
     // Registrar rotas dinâmicas do frontend
     this.registerViewRoutes(path.join(webRoot, "views"));
 
-    // Fallback: qualquer rota não mapeada vai para login
+    // Fallback: qualquer rota não mapeada vai para /
     this.app.get("*", (_req: Request, res: Response) => {
       res.redirect("/");
     });
@@ -65,6 +65,11 @@ export class AppSingleton {
         // login.html vira /
         if (routePath === "/auth/login") {
           routePath = "/";
+        }
+
+        // dashboard/index.html vira /dashboard
+        if (routePath.endsWith("/index") && routePath !== "/") {
+          routePath = routePath.replace(/\/index$/, "");
         }
 
         // Normaliza separadores de caminho
