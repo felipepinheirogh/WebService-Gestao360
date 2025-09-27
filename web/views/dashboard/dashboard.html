@@ -1,0 +1,17 @@
+<div class="container py-5">
+  <div class="card shadow p-4">
+    <h1 class="mb-3">Dashboard</h1>
+    <p class="mb-4">Bem-vindo ao ERP Gestão 360°</p>
+    <button id="logoutBtn" class="btn btn-outline-danger">Sair</button>
+  </div>
+</div>
+<script>
+  const token = localStorage.getItem("token");
+  if(!token) {
+    location.reload();
+  }
+  document.getElementById("logoutBtn").addEventListener("click", () => {
+    localStorage.removeItem("token");
+    location.reload();
+  });
+</script>
