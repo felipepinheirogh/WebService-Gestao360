@@ -1,4 +1,17 @@
 <!-- web/partials/_sidebar.html -->
-<div class="bg-light vh-100 p-3 d-flex flex-column" id="sidebar">
-  <!-- Menu será renderizado dinamicamente via JS -->
+<div class="d-flex flex-column h-100">
+  <!-- Menu principal -->
+  <ul class="nav flex-column mt-3" id="menuItems">
+    <!-- Menu dinâmico carregado pelo app.js -->
+  </ul>
+
+  <!-- Botões fixos no bottom -->
+  <div class="sidebar-bottom mt-auto p-3 border-top">
+    <button class="btn btn-outline-secondary w-100 mb-2" id="themeToggle">
+      <i class="bi bi-moon-fill"></i> Tema
+    </button>
+    <button class="btn btn-outline-danger w-100" id="logoutBtnSidebar">
+      <i class="bi bi-box-arrow-right"></i> Sair
+    </button>
+  </div>
 </div>

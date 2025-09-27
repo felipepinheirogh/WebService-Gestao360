@@ -2,11 +2,30 @@
 <nav class="navbar navbar-expand-lg shadow-sm" id="mainNavbar">
   <div class="container-fluid">
     <a class="navbar-brand d-flex align-items-center" href="#" onclick="loadView('/views/dashboard/dashboard.html')">
-      <img src="/public/img/gestao360-logo-white.svg" alt="Gestão 360°" width="150">
+      <img src="/public/img/gestao360-logo-dark.svg" alt="Gestão 360°" width="150">
     </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" id="sidebarToggle">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+
+<!-- web/partials/_header.html -->
+<!-- <nav class="navbar navbar-expand-lg shadow-sm" id="mainNavbar">
+  <div class="container-fluid">
+    <button class="btn btn-sm btn-outline-light me-2" id="sidebarToggle">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <a class="navbar-brand d-flex align-items-center" href="#" onclick="loadView('/views/dashboard/dashboard.html')">
+      <img id="logoHeader" src="/public/img/Gestao360-logo-dark.svg" alt="Gestão 360°" width="150">
+    </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav ms-auto align-items-center">
         <li class="nav-item me-2">
@@ -16,26 +35,6 @@
         </li>
         <li class="nav-item">
           <button class="btn btn-outline-danger" id="logoutBtnHeader">Sair</button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- web/partials/_header.html -->
-<!-- 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-  <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center" href="#" onclick="loadView('/views/dashboard/dashboard.html')">
-      <img src="/public/img/gestao360-logo.svg" alt="Gestão 360°" width="150">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <button class="btn btn-outline-light me-2" id="logoutBtnHeader">Sair</button>
         </li>
       </ul>
     </div>
