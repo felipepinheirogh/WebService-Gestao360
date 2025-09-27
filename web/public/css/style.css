@@ -1,0 +1,55 @@
+/* Tema claro (default) */
+body.theme-light {
+  --bg-color: #f8f9fa;
+  --text-color: #212529;
+  --navbar-bg: #343a40;
+  --navbar-text: #ffffff;
+  --sidebar-bg: #ffffff;
+}
+
+/* Tema escuro */
+body.theme-dark {
+  --bg-color: #212529;
+  --text-color: #f8f9fa;
+  --navbar-bg: #212529;
+  --navbar-text: #f8f9fa;
+  --sidebar-bg: #343a40;
+}
+
+/* Aplicando cores via variáveis */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#mainNavbar {
+  background-color: var(--navbar-bg) !important;
+  color: var(--navbar-text) !important;
+}
+
+#sidebar {
+  background-color: var(--sidebar-bg) !important;
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#sidebar .nav-link {
+  color: var(--text-color) !important; /* força pegar a cor da variável */
+}
+
+#sidebar .nav-link:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+/* Corrige links ativos do menu (quando clicado) */
+#sidebar .nav-link.active {
+  background-color: rgba(0,0,0,0.15);
+  font-weight: 500;
+}
+
+.card {
+  background-color: var(--sidebar-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
