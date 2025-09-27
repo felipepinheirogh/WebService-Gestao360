@@ -1,3 +1,4 @@
+// api/dist/index.js
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // Ponto de entrada (Entry Point) da API 
