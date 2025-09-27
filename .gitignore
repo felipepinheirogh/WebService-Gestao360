@@ -1,7 +1,5 @@
-# Node modules
+# Node
 node_modules/
-
-# Dist / build
 dist/
 
 # Logs
