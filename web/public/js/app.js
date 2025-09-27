@@ -1,3 +1,4 @@
+// web/public/js/app.js
 function loadView(view) {
   fetch(view)
     .then(res => res.text())

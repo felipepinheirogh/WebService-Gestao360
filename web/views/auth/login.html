@@ -1,6 +1,7 @@
+<!-- web/views/auth/login.html -->
 <div class="container d-flex align-items-center justify-content-center min-vh-100">
   <div class="card shadow p-4" style="max-width: 350px; width: 100%;">
-    <img src="/web/public/img/gestao360-logo.svg" class="mx-auto d-block mb-3" style="width:200px;" alt="Gestão 360°">
+    <img src="/public/img/gestao360-logo.svg" class="mx-auto d-block mb-3" style="width:200px;" alt="Gestão 360°">
     <div class="alert alert-danger d-none" id="loginError">Usuário ou senha inválidos!</div>
     <form id="loginForm">
       <div class="input-group mb-3">
@@ -27,7 +28,6 @@
     const password = document.getElementById("password").value;
     const errorDiv = document.getElementById("loginError");
 
-    // Simulação de login
     if(empresa === "demo" && username === "admin" && password === "123") {
       localStorage.setItem("token", "fake-jwt-token");
       location.reload();
