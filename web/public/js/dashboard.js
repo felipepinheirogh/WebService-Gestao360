@@ -1,3 +1,4 @@
+// web/public/js/dashboard.js
 document.addEventListener("DOMContentLoaded", () => {
   // Verifica se o usuário está logado
   const token = localStorage.getItem("token");

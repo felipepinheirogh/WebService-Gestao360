@@ -1,4 +1,4 @@
-// Arquivo JS global
+// web/public/js/main.js
 console.log("JS carregado corretamente");
 
 // // Lógica JavaScript principal do frontend 
