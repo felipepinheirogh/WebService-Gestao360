@@ -1,4 +1,3 @@
-# GITIGNORE
 # Node
 node_modules/
 npm-debug.log
@@ -12,9 +11,9 @@ Thumbs.db
 
 # API
 /api/node_modules
-# NÃO ignorar dist (precisa estar no repositório para produção sem devDeps)
-# /api/dist
+# dist precisa estar no repositório
+# NÃO ignorar api/dist
 
 # Web
 /web/node_modules
-# Não ignorar /web/views nem /web/public (frontend precisa ser servido pela API)
+# NÃO ignorar /web/views e /web/public
