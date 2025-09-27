@@ -1,6 +1,6 @@
 # Node
 node_modules/
-dist/
+npm-debug.log
 
 # Logs
 *.log
@@ -8,5 +8,12 @@ dist/
 # Sistema
 .DS_Store
 Thumbs.db
+
+# API
 /api/node_modules
-/api/dist
+# NÃO ignorar dist (precisa estar no repositório para produção sem devDeps)
+# /api/dist
+
+# Web
+/web/node_modules
+# Não ignorar /web/views nem /web/public (frontend precisa ser servido pela API)

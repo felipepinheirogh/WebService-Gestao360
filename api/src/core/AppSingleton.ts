@@ -1,7 +1,8 @@
-import express, { Application } from "express";
-import { createServer, Server } from "http";
+import express, { Application, Request, Response, NextFunction } from "express";
+import http, { Server } from "http";
 import path from "path";
-import routes from "../routes";
+import fs from "fs";
+import { registerRoutes } from "../routes";
 
 export class AppSingleton {
   private static instance: AppSingleton;
@@ -10,26 +11,29 @@ export class AppSingleton {
 
   private constructor() {
     this.app = express();
-    this.server = createServer(this.app);
 
-    // Middleware base
+    // Middlewares
     this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: true }));
 
-    // API
-    this.app.use("/api", routes);
+    // Caminho absoluto do projeto
+    const webRoot = path.resolve(__dirname, "../../web");
 
-    // Caminhos do frontend
-    const webPath = path.join(__dirname, "../../..", "web");
-    const publicPath = path.join(webPath, "public");
-    const viewsPath = path.join(webPath, "views");
+    // Servir arquivos estáticos (css, js, imagens)
+    this.app.use(express.static(path.join(webRoot, "public")));
 
-    // Arquivos estáticos (css, js, imagens)
-    this.app.use(express.static(publicPath));
+    // Registrar rotas da API
+    registerRoutes(this.app);
 
-    // Fallback: login ou dashboard
-    this.app.get("*", (_req, res) => {
-      res.sendFile(path.join(viewsPath, "login/index.html"));
+    // Registrar rotas dinâmicas do frontend
+    this.registerViewRoutes(path.join(webRoot, "views"));
+
+    // Fallback: qualquer rota não mapeada vai para login
+    this.app.get("*", (_req: Request, res: Response) => {
+      res.redirect("/");
     });
+
+    this.server = http.createServer(this.app);
   }
 
   public static getInstance(): AppSingleton {
@@ -39,10 +43,41 @@ export class AppSingleton {
     return AppSingleton.instance;
   }
 
-  public async start(): Promise<void> {
-    const port = process.env.PORT || 3000;
+  public start(): void {
+    const port: number = parseInt(process.env.PORT || "3000", 10);
     this.server.listen(port, () => {
-      console.log(`✅ Server running on http://localhost:${port}`);
+      console.log(`🚀 Servidor rodando em http://localhost:${port}`);
     });
+  }
+
+  /** Mapeia todas as views HTML como rotas dinâmicas */
+  private registerViewRoutes(dir: string, routePrefix = ""): void {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+
+      if (entry.isDirectory()) {
+        this.registerViewRoutes(fullPath, path.join(routePrefix, entry.name));
+      } else if (entry.isFile() && entry.name.endsWith(".html")) {
+        let routePath = path.join(routePrefix, entry.name.replace(".html", ""));
+
+        // login.html vira /
+        if (routePath === "/auth/login") {
+          routePath = "/";
+        }
+
+        // Normaliza separadores de caminho
+        routePath = routePath.replace(/\\/g, "/");
+
+        this.app.get(routePath, (_req: Request, res: Response, next: NextFunction) => {
+          res.sendFile(fullPath, (err) => {
+            if (err) {
+              next(err);
+            }
+          });
+        });
+      }
+    }
   }
 }
