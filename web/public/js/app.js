@@ -1,11 +1,11 @@
 /* ======================= MENU DINÂMICO ======================= */
 const MENU_ITEMS = [
-  { title: "Dashboard", view: "/views/dashboard/dashboard.html", roles: ["admin", "user"] },
+  { title: "Visão Geral", view: "/views/dashboard/dashboard.html", roles: ["admin", "user"] },
   { title: "Clientes", view: "/views/cliente/cliente.html", roles: ["admin"] },
-  { title: "Licenças", view: "/views/licenca/licenca.html", roles: ["admin", "user"] },
+  { title: "Licenças", view: "/views/licenca/licenca.html", roles: ["admin"] },
   { title: "Usuários", view: "/views/usuario/usuario.html", roles: ["admin"] },
   { title: "Revenda", view: "/views/revenda/revenda.html", roles: ["admin"] },
-  { title: "Configurações", view: "/views/configuracoes/configuracoes.html", roles: ["admin"] },
+  { title: "Configurações", view: "/views/configuracoes/configuracoes.html", roles: ["admin",'user'] },
   { title: "Integração", view: "/views/integracao/settings.html", roles: ["admin"] },
 ];
 
@@ -141,7 +141,7 @@ if (token) {
           // Alterna logo
           const logo = document.querySelector("#mainNavbar .navbar-brand img");
           if (logo) {
-            logo.src = newTheme === "dark" ? "/public/img/Gestao360-logo-claro.svg" : "/public/img/Gestao360-logo-escuro.svg";
+            logo.src = newTheme === "dark" ? "/public/img/Gestao360-logo.svg" : "/public/img/Gestao360-logo.svg";
           }
         });
       }
