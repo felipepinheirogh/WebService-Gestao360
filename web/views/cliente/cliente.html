@@ -1,1 +1,49 @@
 <!-- web/views/cliente/cliente.html -->
+ <div class="container-fluid">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h3 class="card-title">Lista de Clientes</h3>
+    </div>
+    <div class="card-body">
+      <table id="tabelaClientes" class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>CNPJ</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>101</td>
+            <td>Empresa Alpha</td>
+            <td>12.345.678/0001-90</td>
+            <td><span class="badge bg-success">Ativo</span></td>
+            <td>
+              <button class="btn btn-sm btn-info"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td>102</td>
+            <td>Beta Soluções</td>
+            <td>98.765.432/0001-10</td>
+            <td><span class="badge bg-warning">Pendente</span></td>
+            <td>
+              <button class="btn btn-sm btn-info"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function () {
+    $("#tabelaClientes").DataTable();
+  });
+</script>

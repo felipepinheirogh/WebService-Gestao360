@@ -1,18 +1,117 @@
 <!-- web/views/dashboard/dashboard.html -->
-<div class="container py-5">
-  <div class="card shadow p-4">
-    <h1 class="mb-3">Dashboard</h1>
-    <p class="mb-4">Bem-vindo ao ERP Gestão 360°</p>
-    <button id="logoutBtn" class="btn btn-outline-danger">Sair</button>
+<div class="container-fluid">
+  <!-- Small boxes -->
+  <div class="row">
+    <div class="col-lg-3 col-6">
+      <div class="small-box bg-info">
+        <div class="inner">
+          <h3>150</h3>
+          <p>Novos Pedidos</p>
+        </div>
+        <div class="icon"><i class="bi bi-cart"></i></div>
+        <a href="#" class="small-box-footer">Mais info <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="col-lg-3 col-6">
+      <div class="small-box bg-success">
+        <div class="inner">
+          <h3>53%</h3>
+          <p>Taxa de Conversão</p>
+        </div>
+        <div class="icon"><i class="bi bi-bar-chart"></i></div>
+        <a href="#" class="small-box-footer">Mais info <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="col-lg-3 col-6">
+      <div class="small-box bg-warning">
+        <div class="inner">
+          <h3>44</h3>
+          <p>Novos Usuários</p>
+        </div>
+        <div class="icon"><i class="bi bi-people"></i></div>
+        <a href="#" class="small-box-footer">Mais info <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="col-lg-3 col-6">
+      <div class="small-box bg-danger">
+        <div class="inner">
+          <h3>65</h3>
+          <p>Erros do Sistema</p>
+        </div>
+        <div class="icon"><i class="bi bi-bug"></i></div>
+        <a href="#" class="small-box-footer">Mais info <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Info boxes -->
+  <div class="row">
+    <div class="col-md-3">
+      <div class="info-box">
+        <span class="info-box-icon bg-info"><i class="bi bi-cpu"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Uso de CPU</span>
+          <span class="info-box-number">30%</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="info-box">
+        <span class="info-box-icon bg-success"><i class="bi bi-hdd"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Uso de Disco</span>
+          <span class="info-box-number">70%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card card-outline card-primary">
+        <div class="card-header">Relatório de Vendas</div>
+        <div class="card-body">
+          <canvas id="salesChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card card-outline card-success">
+        <div class="card-header">Desempenho</div>
+        <div class="card-body">
+          <canvas id="performanceChart"></canvas>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
 <script>
-  const token = localStorage.getItem("token");
-  if(!token) {
-    location.reload();
-  }
-  document.getElementById("logoutBtn").addEventListener("click", () => {
-    localStorage.removeItem("token");
-    location.reload();
+  const ctx1 = document.getElementById("salesChart").getContext("2d");
+  new Chart(ctx1, {
+    type: "line",
+    data: {
+      labels: ["Jan","Fev","Mar","Abr","Mai","Jun"],
+      datasets: [{
+        label: "Vendas",
+        data: [10,20,15,30,25,40],
+        borderColor: "#007bff",
+        fill: false
+      }]
+    }
+  });
+
+  const ctx2 = document.getElementById("performanceChart").getContext("2d");
+  new Chart(ctx2, {
+    type: "bar",
+    data: {
+      labels: ["Produto A", "Produto B", "Produto C"],
+      datasets: [{
+        label: "Performance",
+        data: [65, 59, 80],
+        backgroundColor: ["#28a745", "#ffc107", "#dc3545"]
+      }]
+    }
   });
 </script>

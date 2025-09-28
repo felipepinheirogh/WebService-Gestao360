@@ -1,0 +1,111 @@
+/* ================================
+   AdminLTE-like Styles (Bootstrap 5)
+   ================================ */
+
+/* Reset utilitário */
+.small-box,
+.info-box,
+.card {
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.1);
+}
+
+/* Small Box */
+.small-box {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  color: #fff;
+  padding: 15px;
+  overflow: hidden;
+}
+.small-box > .inner {
+  z-index: 5;
+}
+.small-box h3 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+.small-box p {
+  font-size: 1rem;
+}
+.small-box .icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 0;
+  font-size: 3.5rem;
+  opacity: 0.3;
+}
+.small-box-footer {
+  display: block;
+  padding: 5px 0;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  text-decoration: none;
+  z-index: 10;
+}
+.small-box-footer:hover {
+  color: #fff;
+}
+
+/* Cores dos small-box */
+.bg-info    { background-color: #17a2b8 !important; }
+.bg-success { background-color: #28a745 !important; }
+.bg-warning { background-color: #ffc107 !important; color: #212529 !important; }
+.bg-danger  { background-color: #dc3545 !important; }
+
+/* Info Box */
+.info-box {
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  background: var(--sidebar-bg);
+  color: var(--text-color);
+  margin-bottom: 20px;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+.info-box .info-box-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 0.5rem;
+  font-size: 1.75rem;
+  color: #fff;
+}
+.info-box .info-box-content {
+  flex: 1;
+  padding-left: 10px;
+}
+.info-box .info-box-text {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.info-box .info-box-number {
+  font-size: 1.5rem;
+}
+
+/* Cards */
+.card {
+  background: var(--sidebar-bg);
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(0,0,0,.125);
+}
+.card-header {
+  font-weight: 600;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.card-outline {
+  border-top: 3px solid;
+}
+.card-outline.card-primary   { border-top-color: #007bff; }
+.card-outline.card-success   { border-top-color: #28a745; }
+.card-outline.card-danger    { border-top-color: #dc3545; }
+.card-outline.card-warning   { border-top-color: #ffc107; }
+.card-outline.card-info      { border-top-color: #17a2b8; }

@@ -1,1 +1,22 @@
 <!-- web/views/configuracoes/configuracoes.html -->
+ <div class="container-fluid">
+  <div class="card card-outline card-warning">
+    <div class="card-header">Configurações do Sistema</div>
+    <div class="card-body">
+      <form>
+        <div class="mb-3">
+          <label for="nomeSistema" class="form-label">Nome do Sistema</label>
+          <input type="text" class="form-control" id="nomeSistema" value="Gestão 360°">
+        </div>
+        <div class="mb-3">
+          <label for="tema" class="form-label">Tema</label>
+          <select class="form-select" id="tema">
+            <option value="claro">Claro</option>
+            <option value="escuro">Escuro</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+    </div>
+  </div>
+</div>

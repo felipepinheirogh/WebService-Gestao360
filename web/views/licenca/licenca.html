@@ -1,1 +1,43 @@
 <!-- web/views/licenca/licenca.html -->
+ <div class="container-fluid">
+  <div class="card">
+    <div class="card-header bg-success text-white">
+      <h3 class="card-title">Gerenciamento de Licenças</h3>
+    </div>
+    <div class="card-body">
+      <table id="tabelaLicencas" class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Produto</th>
+            <th>Validade</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>5001</td>
+            <td>Empresa Alpha</td>
+            <td>ERP Pro</td>
+            <td>31/12/2025</td>
+            <td><span class="badge bg-success">Ativa</span></td>
+          </tr>
+          <tr>
+            <td>5002</td>
+            <td>Beta Soluções</td>
+            <td>ERP Lite</td>
+            <td>15/03/2024</td>
+            <td><span class="badge bg-danger">Expirada</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function () {
+    $("#tabelaLicencas").DataTable();
+  });
+</script>

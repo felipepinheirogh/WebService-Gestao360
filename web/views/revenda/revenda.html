@@ -1,1 +1,41 @@
 <!-- web/views/revenda/revenda.html -->
+ <div class="container-fluid">
+  <div class="row">
+    <!-- Card de Informações -->
+    <div class="col-md-4">
+      <div class="card card-outline card-primary">
+        <div class="card-header">Revenda XPTO</div>
+        <div class="card-body">
+          <p><strong>Contato:</strong> comercial@revendaxpto.com</p>
+          <p><strong>Telefone:</strong> (11) 99999-0000</p>
+          <p><strong>Licenças Ativas:</strong> 120</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card com gráfico -->
+    <div class="col-md-8">
+      <div class="card card-outline card-success">
+        <div class="card-header">Performance de Vendas</div>
+        <div class="card-body">
+          <canvas id="revendaChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const ctxRev = document.getElementById("revendaChart").getContext("2d");
+  new Chart(ctxRev, {
+    type: "bar",
+    data: {
+      labels: ["Jan","Fev","Mar","Abr","Mai","Jun"],
+      datasets: [{
+        label: "Licenças Vendidas",
+        data: [12, 19, 8, 15, 22, 30],
+        backgroundColor: "#17a2b8"
+      }]
+    }
+  });
+</script>

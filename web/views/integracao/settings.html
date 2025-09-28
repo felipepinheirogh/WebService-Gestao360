@@ -1,1 +1,38 @@
 <!-- web/views/integracao/settings.html -->
+ <div class="container-fluid">
+  <div class="row">
+    <!-- Integração com API -->
+    <div class="col-md-6">
+      <div class="card card-outline card-info">
+        <div class="card-header">Integração com API Externa</div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label for="apiKey" class="form-label">API Key</label>
+              <input type="text" class="form-control" id="apiKey" value="12345-ABCDE">
+            </div>
+            <div class="mb-3">
+              <label for="endpoint" class="form-label">Endpoint</label>
+              <input type="url" class="form-control" id="endpoint" value="https://api.exemplo.com/v1/">
+            </div>
+            <button type="submit" class="btn btn-success">Salvar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logs de Integração -->
+    <div class="col-md-6">
+      <div class="card card-outline card-danger">
+        <div class="card-header">Logs de Integração</div>
+        <div class="card-body" style="max-height:200px; overflow-y:auto;">
+          <ul class="list-group">
+            <li class="list-group-item">[12:00] Enviado pedido #1023</li>
+            <li class="list-group-item">[12:05] Retorno OK da API</li>
+            <li class="list-group-item">[12:10] Erro 401 - Unauthorized</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,46 @@
 <!-- web/views/usuario/usuario.html -->
+ <div class="container-fluid">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h3 class="card-title">Gerenciamento de Usuários</h3>
+    </div>
+    <div class="card-body">
+      <table id="tabelaUsuarios" class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Ana Souza</td>
+            <td>ana.souza@example.com</td>
+            <td><span class="badge bg-success">Ativo</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>João Silva</td>
+            <td>joao.silva@example.com</td>
+            <td><span class="badge bg-danger">Inativo</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Maria Oliveira</td>
+            <td>maria.oliveira@example.com</td>
+            <td><span class="badge bg-success">Ativo</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#tabelaUsuarios").DataTable();
+  });
+</script>
