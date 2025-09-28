@@ -1,0 +1,41 @@
+<!-- /web/views/licenca/licenca-form.html -->
+<div class="container-fluid mt-3">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h3 class="card-title">Editar Licença</h3>
+    </div>
+    <div class="card-body">
+      <form id="formLicenca">
+        <input type="hidden" id="licencaIDForm">
+        <div class="mb-3">
+          <label for="clienteNome">Cliente</label>
+          <input type="text" id="clienteNome" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="revendaNome">Revenda</label>
+          <input type="text" id="revendaNome" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="erpNome">ERP</label>
+          <input type="text" id="erpNome" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="dataValidadeForm">Data de Validade</label>
+          <input type="date" id="dataValidadeForm" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="statusForm">Status</label>
+          <select id="statusForm" class="form-select">
+            <option value="Ativa">Ativa</option>
+            <option value="Solicitação">Solicitação</option>
+            <option value="A Expirar">A Expirar</option>
+            <option value="Expirada">Expirada</option>
+            <option value="Bloqueada">Bloqueada</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a href="#" onclick="loadView('/views/licenca/licenca.html')" class="btn btn-secondary">Cancelar</a>
+      </form>
+    </div>
+  </div>
+</div>

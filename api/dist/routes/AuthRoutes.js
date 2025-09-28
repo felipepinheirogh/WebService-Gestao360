@@ -1,3 +1,4 @@
+// api/dist/routes/AuthRoutes.js
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // Definicao das Rotas de Autenticacao 

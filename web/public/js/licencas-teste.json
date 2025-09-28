@@ -1,0 +1,42 @@
+[
+  {
+    "id": 5001,
+    "status": "Ativa",
+    "expira": "2025-12-31",
+    "cliente": "Empresa Alpha",
+    "revenda": "Revenda X",
+    "erp": "ERP Pro"
+  },
+  {
+    "id": 5002,
+    "status": "Expirada",
+    "expira": "2024-03-15",
+    "cliente": "Beta Soluções",
+    "revenda": "Revenda Y",
+    "erp": "ERP Lite"
+  },
+  {
+    "id": 5003,
+    "status": "A Expirar",
+    "expira": "2025-10-15",
+    "cliente": "Gamma Tech",
+    "revenda": "Revenda Z",
+    "erp": "ERP Pro"
+  },
+  {
+    "id": 5004,
+    "status": "Bloqueada",
+    "expira": "2025-11-20",
+    "cliente": "Delta Corp",
+    "revenda": "Revenda X",
+    "erp": "ERP Lite"
+  },
+  {
+    "id": 5005,
+    "status": "Solicitação",
+    "expira": "2025-09-30",
+    "cliente": "Epsilon Ltda",
+    "revenda": "Revenda Y",
+    "erp": "ERP Pro"
+  }
+]

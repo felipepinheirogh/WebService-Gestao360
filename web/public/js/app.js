@@ -1,3 +1,4 @@
+// web/public/js/app.js
 /* ======================= MENU DINÂMICO ======================= */
 const MENU_ITEMS = [
   { title: "Visão Geral", view: "/views/dashboard/dashboard.html", roles: ["admin", "user"] },
