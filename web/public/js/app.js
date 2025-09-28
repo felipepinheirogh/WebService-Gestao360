@@ -141,7 +141,7 @@ if (token) {
           // Alterna logo
           const logo = document.querySelector("#mainNavbar .navbar-brand img");
           if (logo) {
-            logo.src = newTheme === "dark" ? "/public/img/Gestao360-logo.svg" : "/public/img/Gestao360-logo.svg";
+            logo.src = newTheme === "dark" ? "/public/img/Gestao360-logo-claro.svg" : "/public/img/Gestao360-logo-escuro.svg";
           }
         });
       }
